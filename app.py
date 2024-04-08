@@ -9,22 +9,22 @@ def baseRequest (command="getMe"):
     result = json.loads(res.read())['result']
     return result
 def sendMessage(chat_id, text):
-    query = parse. urlencode([
+    query = parse.urlencode([
     ('chat_id', chat_id),
     ('text', text)
-    ]}
+    ])
     #print (query)
     baseRequest('sendMessage?'+query)
     
 @app.route("/")
-def hello_world(): :
-    return 'hi'
+def hello_world():
+    return 'hi~~'
 
-@app.route("/937911760:AMGoaceL_hvdr3viab1dBiofapXHpOLRSHA", methods=[ 'POST', 'GET'])
-def telegran():
+@app.route("/7050846499:AAEs_EPADdydBPcggtKpQSpXLCLNebIeG3o", methods=[ 'POST', 'GET'])
+def telegram():
     data = request.get_json()
     print (data)
     chat_id = data ['message']['chat']['id']
     text = data['message']['text']
     sendMessage(chat_id, text)
-    return json.dumps ({success':True})
+    return json.dumps ({'success':True})
