@@ -6,7 +6,7 @@ import urllib.request as req
 app = Flask(__name__)
 
 def baseRequest (command="getMe"):
-    baseURL = 'https://api.telegram.org/bot7177567985:AAEz1ydSDfXu3vIgz0UMQ-4wRgmtm4h0Pnc'
+    baseURL = 'https://api.telegram.org/bot7177567985:AAEz1ydSDfXu3vIgz0UMQ-4wRgmtm4h0Pnc/'
     res = req.urlopen(baseURL+command)
     result = json.loads(res.read())['result']
     return result
