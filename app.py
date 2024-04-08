@@ -6,7 +6,7 @@ import urllib.request as req
 app = Flask(__name__)
 
 def baseRequest (command="getMe"):
-    baseURL = 'https://api.telegram.org/bot7177567985:AAEz1ydSDfXu3vIgz0UMQ-4wRgmtm4h0Pnc/'
+    baseURL = 'https://api.telegram.org/bot6886102500:AAE7Tj0KHd39kJYcHFQ5hNoHvfPi3Db8x6U/'
     res = req.urlopen(baseURL+command)
     result = json.loads(res.read())['result']
     return result
@@ -22,7 +22,7 @@ def sendMessage(chat_id, text):
 def hello_world():
     return 'hi~~'
 
-@app.route('/7177567985:AAEz1ydSDfXu3vIgz0UMQ-4wRgmtm4h0Pnc', methods=['POST','GET'])
+@app.route('/6886102500:AAE7Tj0KHd39kJYcHFQ5hNoHvfPi3Db8x6U', methods=['POST','GET'])
 def telegram():
     data = request.get_json()
     #print (data)
