@@ -24,10 +24,9 @@ def hello_world():
 
 @app.route('/7050846499:AAEs_EPADdydBPcggtKpQSpXLCLNebIeG3o', methods=['POST','GET'])
 def telegram():
-    return 'hi~~'
-    #data = request.get_json()
+    data = request.get_json()
     #print (data)
-    #chat_id = data['message']['chat']['id']
-    #text = data['message']['text']
-    #sendMessage(chat_id, text)
-    #return json.dumps({'success':True})
+    chat_id = data['message']['chat']['id']
+    text = data['message']['text']
+    sendMessage(chat_id, text)
+    return json.dumps({'success':True})
