@@ -2,6 +2,7 @@ from flask import Flask,request
 import json
 import urllib.parse as parse
 import urllib.request as req
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -34,4 +35,4 @@ def telegram():
 
 @app.route('/app')
 def app_world():
-    return json.loads({'id': 10 ,'userId': 10 ,'title':'Flask'})
+    return jsonify({'id': 10 ,'userId': 10 ,'title':'Flask'})
