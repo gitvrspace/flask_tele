@@ -10,6 +10,7 @@ def baseRequest (command="getMe"):
     res = req.urlopen(baseURL+command)
     result = json.loads(res.read())['result']
     return result
+
 def sendMessage(chat_id, text):
     query = parse.urlencode([
       ('chat_id', chat_id),
@@ -20,7 +21,7 @@ def sendMessage(chat_id, text):
     
 @app.route('/')
 def hello_world():
-    return 'hi~~'
+    return 'Flask Telegram Bot Webhook'
 
 @app.route('/6886102500:AAE7Tj0KHd39kJYcHFQ5hNoHvfPi3Db8x6U', methods=['POST','GET'])
 def telegram():
@@ -30,3 +31,7 @@ def telegram():
     text = data['message']['text']
     sendMessage(chat_id, text)
     return json.dumps({'success':True})
+
+@app.route('/app')
+def app_world():
+    return json.dumps({'success':'Flask Telegram Bot Webhook'})
