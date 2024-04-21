@@ -34,4 +34,4 @@ def telegram():
 
 @app.route('/app')
 def app_world():
-    return json.dumps({'id': 10 ,'userId': 10 ,'title':'Flask'})
+    return json.encoder({'id': 10 ,'userId': 10 ,'title':'Flask'})
