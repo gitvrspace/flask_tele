@@ -33,6 +33,7 @@ def telegram():
     sendMessage(chat_id, text)
     return json.dumps({'success':True})
 
-@app.route('/app') 
+@app.route('/app',methods=['POST','GET']) 
 def app_world():
+    data = request.get_json()
     return jsonify({'id': 10 ,'userId': 10 ,'title':'Flask'})
